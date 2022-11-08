@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  padding: 0 1em;
+  background-color: #142033;
+  color: white;
+  justify-content: space-between;
+}
+
+.actionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(184, 199, 214);
+  gap: 1em;
+  margin: 1em;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
