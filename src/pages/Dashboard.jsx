@@ -2,8 +2,6 @@ import { useState } from "react";
 
 // Data
 import mockData from "../assets/data.json";
-import timestamps from "../assets/timeStamps.json";
-
 // Components
 import Dropdown from "../component/dropdown/Dropdown";
 import HeaderTitle from "../component/header-title/HeaderTitle";
@@ -19,11 +17,17 @@ const Dashboard = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
-
+  const handleRowSelect = (rowData) => {
+    setSelectedOrderDetails(rowData);
+    setSelectedOrderTimeStamps(rowData);
+  };
   return (
     <div>
       <div className={styles.header}>
-        <HeaderTitle primaryTitle="Orders" secondaryTitle="5 orders" />
+        <HeaderTitle
+          primaryTitle="Orders"
+          secondaryTitle={mockData.results.length + " orders"}
+        />
         <div className={styles.actionBox}>
           <Search
             value={searchText}
@@ -44,10 +48,15 @@ const Dashboard = () => {
           />
           <Card
             cardData={selectedOrderTimeStamps}
-            title="Selected Order Timestamps"
+            title="Selected Order TimeStamps"
           />
         </div>
-        <List rows={mockData.results} />
+        <List
+          rows={mockData.results}
+          cur={currency}
+          search={searchText}
+          onSelect={handleRowSelect}
+        />
       </div>
     </div>
   );
