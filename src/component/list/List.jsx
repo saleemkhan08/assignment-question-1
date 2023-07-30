@@ -6,7 +6,7 @@ import ListHeaderCell from "./ListHeaderCell";
 
 import styles from "./List.module.css";
 
-const List = ({ rows, orders}) => {
+const List = ({ rows, orders, currency}) => {
   return (
     <table className={styles.container}>
       <thead>
@@ -15,7 +15,7 @@ const List = ({ rows, orders}) => {
           <ListHeaderCell>Buy/Sell</ListHeaderCell>
           <ListHeaderCell>Country</ListHeaderCell>
           <ListHeaderCell>Order Submitted</ListHeaderCell>
-          <ListHeaderCell>Order Volume / USD</ListHeaderCell>
+          <ListHeaderCell>Order Volume / {currency}</ListHeaderCell>
         </ListHeader>
       </thead>
       <tbody>
@@ -25,7 +25,7 @@ const List = ({ rows, orders}) => {
             <ListRowCell>{info.executionDetails.buySellIndicator}</ListRowCell>
             <ListRowCell>{info.executionDetails.orderStatus}</ListRowCell>
             <ListRowCell>{info.timestamps.orderSubmitted}</ListRowCell>
-            <ListRowCell>{info.bestExecutionData.orderVolume.USD}</ListRowCell>
+            <ListRowCell>{info.bestExecutionData.orderVolume[currency]}</ListRowCell>
           </ListRow>
         ))}
       </tbody>
