@@ -6,7 +6,7 @@ import ListHeaderCell from "./ListHeaderCell";
 
 import styles from "./List.module.css";
 
-const List = ({ rows }) => {
+const List = ({ rows, orders}) => {
   return (
     <table className={styles.container}>
       <thead>
@@ -19,13 +19,13 @@ const List = ({ rows }) => {
         </ListHeader>
       </thead>
       <tbody>
-        {rows.map((row) => (
+        {rows.map((rows, index) => ({...rows, ...orders[index]})).map((info) => (
           <ListRow>
-            <ListRowCell>{row["&id"]}</ListRowCell>
-            <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
-            <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
-            <ListRowCell>{row.orderSubmitted}</ListRowCell>
-            <ListRowCell>{row.bestExecutionData.orderVolume.USD}</ListRowCell>
+            <ListRowCell>{info["&id"]}</ListRowCell>
+            <ListRowCell>{info.executionDetails.buySellIndicator}</ListRowCell>
+            <ListRowCell>{info.executionDetails.orderStatus}</ListRowCell>
+            <ListRowCell>{info.timestamps.orderSubmitted}</ListRowCell>
+            <ListRowCell>{info.bestExecutionData.orderVolume.USD}</ListRowCell>
           </ListRow>
         ))}
       </tbody>
