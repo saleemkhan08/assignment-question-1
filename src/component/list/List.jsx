@@ -4,13 +4,7 @@ import ListHeader from "./ListHeader";
 import ListHeaderCell from "./ListHeaderCell";
 import styles from "./List.module.css";
 
-const List = ({ rows, cur, search, onSelect }) => {
-  const filteredRows = search
-    ? rows.filter((row) =>
-        row["&id"].toLowerCase().includes(search.toLowerCase())
-      )
-    : rows;
-
+const List = ({ rows, cur, onSelect }) => {
   return (
     <table className={styles.container}>
       <thead>
@@ -24,7 +18,7 @@ const List = ({ rows, cur, search, onSelect }) => {
         </ListHeader>
       </thead>
       <tbody>
-        {filteredRows.map((row) => (
+        {rows.map((row) => (
           <ListRow key={row["&id"]} onSelect={onSelect} row={row}>
             <ListRowCell>{row["&id"]}</ListRowCell>
             <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
