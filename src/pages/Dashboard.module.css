@@ -23,6 +23,9 @@
 
 .section {
   display: flex;
-  flex-direction: column;
   gap: 1em;
+}
+
+.section :nth-child(n){
+  width: 100%;
 }
