@@ -13,7 +13,7 @@ import styles from "./Dashboard.module.css";
 import Card from "../component/card/Card";
 
 const Dashboard = () => {
-  const [currency, setCurrency] = useState("EUR");
+  const [currency, setCurrency] = useState("USD");
   const [searchText, setSearchText] = useState("");
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
@@ -51,7 +51,39 @@ const Dashboard = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <Dropdown
-            options={["GBP", "USD", "JPY", "EUR", ""]}
+            options={[
+              "AUD",
+              "BGN",
+              "BRL",
+              "CAD",
+              "CHF",
+              "CNY",
+              "CZK",
+              "DKK",
+              "EUR",
+              "GBP",
+              "HKD",
+              "HRK",
+              "HUF",
+              "IDR",
+              "ILS",
+              "INR",
+              "JPY",
+              "KRW",
+              "MXN",
+              "MYR",
+              "NOK",
+              "NZD",
+              "PHP",
+              "PLN",
+              "RON",
+              "SEK",
+              "SGD",
+              "THB",
+              "TRY",
+              "USD",
+              "ZAR",
+            ]}
             onChange={(e) => setCurrency(e.target.value)}
             selectedItem={currency}
           />
