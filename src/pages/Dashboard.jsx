@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 // Data
 import mockData from "../assets/data.json";
@@ -17,16 +17,33 @@ const Dashboard = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
+  const [filteredRows, setFilteredRows] = useState(mockData.results);
   const handleRowSelect = (rowData) => {
     setSelectedOrderDetails(rowData.executionDetails);
     setSelectedOrderTimeStamps(rowData.timestamps);
   };
+
+  useMemo(() => {
+    if (searchText) {
+      const filteredData = mockData.results.filter((row) =>
+        row["&id"].toLowerCase().includes(searchText.toLowerCase())
+      );
+      setFilteredRows(filteredData);
+    } else {
+      setFilteredRows(mockData.results);
+    }
+  }, [searchText]);
+
   return (
     <div>
       <div className={styles.header}>
         <HeaderTitle
           primaryTitle="Orders"
-          secondaryTitle={mockData.results.length + " orders"}
+          secondaryTitle={
+            searchText
+              ? `${filteredRows.length} orders (filtered)`
+              : `${mockData.results.length} orders`
+          }
         />
         <div className={styles.actionBox}>
           <Search
@@ -51,12 +68,7 @@ const Dashboard = () => {
             title="Selected Order TimeStamps"
           />
         </div>
-        <List
-          rows={mockData.results}
-          cur={currency}
-          search={searchText}
-          onSelect={handleRowSelect}
-        />
+        <List rows={filteredRows} cur={currency} onSelect={handleRowSelect} />
       </div>
     </div>
   );
