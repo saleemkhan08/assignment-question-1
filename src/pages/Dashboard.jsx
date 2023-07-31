@@ -18,8 +18,8 @@ const Dashboard = () => {
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
   const handleRowSelect = (rowData) => {
-    setSelectedOrderDetails(rowData);
-    setSelectedOrderTimeStamps(rowData);
+    setSelectedOrderDetails(rowData.executionDetails);
+    setSelectedOrderTimeStamps(rowData.timestamps);
   };
   return (
     <div>
@@ -34,7 +34,7 @@ const Dashboard = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <Dropdown
-            options={["GBP", "USD", "JPY", "EUR"]}
+            options={["GBP", "USD", "JPY", "EUR", ""]}
             onChange={(e) => setCurrency(e.target.value)}
             selectedItem={currency}
           />
