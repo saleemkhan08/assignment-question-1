@@ -25,7 +25,3 @@
   display: flex;
   gap: 1em;
 }
-
-.section :nth-child(n){
-  width: 100%;
-}

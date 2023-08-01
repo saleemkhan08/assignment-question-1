@@ -6,7 +6,7 @@ import ListHeaderCell from "./ListHeaderCell";
 
 import styles from "./List.module.css";
 
-const List = ({ rows, orders, currency, search }) => {
+const List = ({ rows, orders, currency, search, onRowClick }) => {
 	
 	// this function creates an seperate object which store values of data.json and timestamp.json
 	const data = rows.map((rows, index) => ({ ...rows, ...orders[index] }))
@@ -27,7 +27,7 @@ const List = ({ rows, orders, currency, search }) => {
 			</thead>
 			<tbody>
 				{filteredItem.map((info) => (
-					<ListRow key={info["&key"]}>
+					<ListRow key={info["&key"]} item={info} onRowClick={onRowClick}>
 						<ListRowCell>{info["&id"]}</ListRowCell>
 						<ListRowCell>{info.executionDetails.buySellIndicator}</ListRowCell>
 						<ListRowCell>{info.executionDetails.orderStatus}</ListRowCell>
