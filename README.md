@@ -1,4 +1,4 @@
-# Completed Assignment <img src="https://drive.google.com/file/d/1ihz0pFdnnJlyAiNAaRGijjocaAo0WjhI/view">
+# Completed Assignment <img src="https://ibb.co/pnRxHd7">
 
 - Hosted Link = https://assignment-question-1-aehpx783c-kunwarvk01.vercel.app/
 
