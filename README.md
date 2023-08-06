@@ -1,29 +1,16 @@
-# Instructions
+# Completed Assignment
 
-- clone this repo and open with your favorite code editor
+- Hosted Link = 
 
-- make sure you are checked out to `master` branch
+## The Following issues have been fixed
 
-- to run the app `npm install` then `npm start`
-
-## Please fix the following issues
-
-1.  In the title of the header, it displays `5 orders` but there are `6 orders` in the table. We want to display the `total` number of `orders` in the header title
-
-2.  In the table order submitted date is missing, we have timestamp data included in the `src\assets\timeStamps.json` with the corresponding ids, please combine that with the order data and make sure the order submitted date is being displayed in the table
-
-3.  Order Volume cell is displaying USD values, can you please make it display the currency value selected on the dropdown located in the header of the dashboard
-
-4.  Can you please add search feature on the order IDs with the search bar given in the header
-
-5.  Please clear the console errors and warnings.
-
-6.  When user selects an order, can you populate the Card on top of the listing component as shown in the image
-
-![alt text](dashboard.JPG)
-
-## Bonus
-
-- run storybook `npm run storybook`
-
-1. Please add storybook to one of the components
+1.  Total number of orders have been displayed on header.
+2.  Header is configured to show number of orders after filteration.
+3.  Order submitted date has been added to the table
+4.  TimeStamp data has been included
+5.  Dropdown menu has been configured to show all currencies and changes the table when selected.
+6.  Country origin of order has been added to the table
+7.  Search feature has been added using ids
+8.  Selecting a row shows its data on the cards given
+9.  Cards have been configured to show side by side instead of below each other.
+10. The console has been cleared of any warnings or errors
