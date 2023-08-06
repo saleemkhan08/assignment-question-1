@@ -1,4 +1,4 @@
-# Completed Assignment
+# Completed Assignment <img src ="https://icons8.com/icon/CIdgkSn4RFPP/checkmark">
 
 - Hosted Link = https://assignment-question-1-aehpx783c-kunwarvk01.vercel.app/
 
