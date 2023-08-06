@@ -12,5 +12,5 @@
 6.  Country origin of order has been added to the table.
 7.  Search feature has been added using ids.
 8.  Selecting a row shows its data on the cards given.
-9.  Cards have been configured to show side by side instead of below each other.
+9.  Cards have been configured to show side by side instead of vertical order.
 10. The console has been cleared of any warnings or errors.
