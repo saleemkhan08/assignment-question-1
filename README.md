@@ -1,4 +1,6 @@
-# Completed Assignment <img src ="https://icons8.com/icon/CIdgkSn4RFPP/checkmark">
+# Completed Assignment <video loop>
+  <source src="https://icons8.com/icon/CIdgkSn4RFPP/checkmark" type="video/mp4">
+</video>
 
 - Hosted Link = https://assignment-question-1-aehpx783c-kunwarvk01.vercel.app/
 
