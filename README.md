@@ -2,7 +2,7 @@
 
 - Hosted Link = 
 
-# ChangeLogs : ## The Following issues have been fixed
+# ChangeLogs : The Following issues have been fixed
 
 1.  Total number of orders have been displayed on header.
 2.  Header is configured to show number of orders after filteration.
