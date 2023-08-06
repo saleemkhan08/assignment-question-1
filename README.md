@@ -1,4 +1,4 @@
-# Completed Assignment <img src="https://ibb.co/pnRxHd7">
+# Completed Assignment ☑️
 
 - Hosted Link = https://assignment-question-1-aehpx783c-kunwarvk01.vercel.app/
 
