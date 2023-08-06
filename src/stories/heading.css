@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,300;1,700&display=swap');
+
+.storybook-heading {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    line-height: 1;
+    
+}
+
+.storybook-heading--normal {
+    font-style: normal;
+    color: rgb(49, 49, 49);
+}
+
+.storybook-heading--italic {
+    font-style: italic;
+    color: rgb(49, 49, 49);
+}
+
+.storybook-heading--small {
+    font-size: 1.2rem;
+}
+
+.storybook-heading--medium {
+    font-size: 1.6rem;
+}
+
+.storybook-heading--large {
+    font-size: 2rem;
+}
