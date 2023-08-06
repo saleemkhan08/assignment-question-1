@@ -7,7 +7,16 @@ import ListHeaderCell from "./ListHeaderCell";
 import styles from "./List.module.css";
 
 
-const List = ({ rows, timestamps }) => {
+
+const List = ({ rows, timestamps, selectedCurrency }) => {
+
+  const exchangeRates = {
+    USD: 1,
+    GBP: 0.73,
+    JPY: 110.5,
+    EUR: 0.85, 
+  };
+
   return (
     <table className={styles.container}>
       <thead>
@@ -28,7 +37,9 @@ const List = ({ rows, timestamps }) => {
             <ListRowCell>
               {timestamps[index]?.timestamps.orderSubmitted || "N/A"}
             </ListRowCell>
-            <ListRowCell>{row.bestExecutionData.orderVolume.USD}</ListRowCell>
+            <ListRowCell>
+              {row.bestExecutionData.orderVolume.USD * exchangeRates[selectedCurrency]} {selectedCurrency}
+            </ListRowCell>
           </ListRow>
         ))}
       </tbody>
