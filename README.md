@@ -1,6 +1,6 @@
 # Completed Assignment ☑️
 
-- Hosted Link = https://assignment-question-1-aehpx783c-kunwarvk01.vercel.app/
+- Hosted Link = https://assignment-question-1-sigma.vercel.app/
 
 # ChangeLogs : The Following issues have been fixed
 
