@@ -27,6 +27,7 @@ const Dashboard = () => {
         <div className={styles.actionBox}>
           <Search
             value={searchText}
+            placeholder="Search by Order ID..."
             onChange={(e) => setSearchText(e.target.value)}
           />
           <Dropdown
