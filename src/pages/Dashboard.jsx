@@ -23,10 +23,11 @@ const Dashboard = () => {
   return (
     <div>
       <div className={styles.header}>
-        <HeaderTitle primaryTitle="Orders" secondaryTitle="5 orders" />
+        <HeaderTitle primaryTitle="Orders" secondaryTitle="6 orders" />
         <div className={styles.actionBox}>
           <Search
             value={searchText}
+            placeholder="Search by Order ID..."
             onChange={(e) => setSearchText(e.target.value)}
           />
           <Dropdown
@@ -47,7 +48,7 @@ const Dashboard = () => {
             title="Selected Order Timestamps"
           />
         </div>
-        <List rows={mockData.results} />
+        <List rows={mockData.results} timestamps={timestamps.results} selectedCurrency={currency}/>
       </div>
     </div>
   );
