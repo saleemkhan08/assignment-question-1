@@ -9,16 +9,16 @@ import ListHeaderCell from "./ListHeaderCell";
 import styles from "./List.module.css";
 
 const List = ({ rows, timestamps, selectedCurrency }) => {
-
   const exchangeRates = {
     USD: 1,
     GBP: 0.73,
     JPY: 110.5,
-    EUR: 0.85, 
+    EUR: 0.85,
   };
 
   const [searchQuery, setSearchQuery] = useState("");
 
+  const uniqueIds = new Set(rows.map((row) => row["&id"]));
   const filteredRows = rows.filter((row) =>
     row["&id"].toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -35,19 +35,25 @@ const List = ({ rows, timestamps, selectedCurrency }) => {
         </ListHeader>
       </thead>
       <tbody>
-        {rows.map((row, index) => (
-          <ListRow key={row["&id"]}>
-            <ListRowCell>{row["&id"]}</ListRowCell>
-            <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
-            <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
-            <ListRowCell>
-              {timestamps[index]?.timestamps.orderSubmitted || "N/A"}
-            </ListRowCell>
-            <ListRowCell>
-              {row.bestExecutionData.orderVolume.USD * exchangeRates[selectedCurrency]} {selectedCurrency}
-            </ListRowCell>
-          </ListRow>
-        ))}
+        {[...uniqueIds].map((uniqueId) => {
+          const row = rows.find((row) => row["&id"] === uniqueId);
+          const index = rows.indexOf(row);
+          return (
+            <ListRow key={uniqueId}>
+              <ListRowCell>{row["&id"]}</ListRowCell>
+              <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
+              <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
+              <ListRowCell>
+                {timestamps[index]?.timestamps.orderSubmitted || "N/A"}
+              </ListRowCell>
+              <ListRowCell>
+                {row.bestExecutionData.orderVolume.USD *
+                  exchangeRates[selectedCurrency]}{" "}
+                {selectedCurrency}
+              </ListRowCell>
+            </ListRow>
+          );
+        })}
       </tbody>
     </table>
   );
